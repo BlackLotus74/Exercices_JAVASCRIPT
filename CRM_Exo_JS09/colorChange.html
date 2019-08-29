@@ -10,19 +10,19 @@
         <h1>Changement de couleurs</h1>
         <div id="content">
             <div class="first">
-                    <input type="text" name="nomRouge"  id="nomRouge">
-                    <input type="text" name="nomVert"  id="nomVert">                  
-                    <input type="text" name="nomBleu"  id="nomBleu">
+                    <input type="text" name="nomRouge"  id="nomRouge" onclick="displayName(red)"; value="A2">
+                    <input type="text" name="nomVert"  id="nomVert" onclick="displayName()"; value="B7">                  
+                    <input type="text" name="nomBleu"  id="nomBleu" onclick="displayName()"; value="CC">
             </div> 
           
             <div id="button">
-                    <button onclick="changeColor('red')" id="r1">Rouge</button>
+                    <button onclick="changeColor('red')"  id="r1">Rouge</button>
                     <button onclick="changeColor('green')" id="v1">Vert</button>
                     <button onclick="changeColor('blue')" id="b1">Bleu</button>
             </div>            
         </div>
 
         <script type="text/javascript" src="changeColor.js"></script> 
-        <script src=""></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     </body>
 </html>
