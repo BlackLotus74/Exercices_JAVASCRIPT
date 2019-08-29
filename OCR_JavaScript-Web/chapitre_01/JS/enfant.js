@@ -6,7 +6,7 @@
 // Le paramètre noeud est l'objet du DOM
 // Le paramètre indice est l'indice de l'enfant à afficher
 
-function afficherEnfant(noeud, indice){
+/*function afficherEnfant(noeud, indice){
     if (noeud.nodeType === document.ELEMENT_NODE) {
         if ((indice >= 0) && (indice < noeud.childNodes.length)) {
             console.log(noeud.childNodes[indice]);
@@ -31,4 +31,4 @@ afficherEnfant(document.body, 8);
 
 // Doit afficher l'erreur "Type de noeud incorrect"
 // Le premier noeud enfant de body est textuel et n'a donc pas d'enfants
-afficherEnfant(document.body.childNodes[0], 0);
+afficherEnfant(document.body.childNodes[0], 0);*/

@@ -1,0 +1,30 @@
+body{
+    background: rgb(141, 180, 224);
+}
+
+#content{
+    background: rgb(154, 201, 154);
+    width:527px;
+    height: 43px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+#button{
+margin-top: 3px;
+}
+
+#r1 {
+    position: absolute;
+}
+
+#v1{
+    /*position: relative;*/
+    margin-left: 177px;   
+}
+
+#b1{
+    /*position: relative;*/
+    margin-left: 133px;
+}
+
