@@ -13,10 +13,10 @@ function afficherDate(){
         mois=(mois<10)?"0"+mois:mois;
 
         var chaineDate = jour +"/"+ mois +"/"+ annee;
-        document.getElementById("txtdate").value = chaineDate;
+        return document.getElementById("txtdate").value = chaineDate;
     }
 
-     document.getElementById("btndate").addEventListener("click", afficherDate);
+     //document.getElementById("btndate").addEventListener("click", afficherDate);
 
 
 function afficherHeure(){
