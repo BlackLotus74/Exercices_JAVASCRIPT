@@ -10,7 +10,7 @@ function rgb(){
 }
 
 //correction
-function testChamps (_champs){
+/*function testChamps (_champs){
     var chaine = document.getElementById(_champs).value.toUpperCase();
     var regex = /^[0-9A-F]{2}$/;
     var testBool = false;
@@ -18,7 +18,7 @@ function testChamps (_champs){
     if(regex.test(chaine)){
         testBool = true;
     }else{
-        document.getElementById(_champs).value="";
+        //document.getElementById(_champs).value="";
         document.getElementById(_champs).focus();
         alert("2 caractères en code hexa");
     }
@@ -33,7 +33,19 @@ function genereCouleur(_champs){
 
         document.body.style.backgroundColor = couleur;
     }
+document.querySelector("#rouge").addEventListener("blur", function(){genereCouleur("rouge");
+});
 
-document.querySelector("#rouge").addEventListener("blur", function(){genereCouleur("rouge");});
+document.querySelector("#vert").addEventListener("blur", function(){genereCouleur("vert");
+});
+
+document.querySelector("#bleu").addEventListener("blur", function(){genereCouleur("bleu");
+});
 }
+
+function genereCouleur(_rouge, _vert, _bleu){
+    var couleur = "#" + _rouge + _vert + _bleu;
+    document.body.style.backgroundColor = couleur;
+}*/
+
 
