@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+
+    <body>
+        <h1></h1>
+
+        <h2></h2>
+            <p>
+
+            </p>
+            <form method="POST" action="">
+                <div>
+                    <label>User name : </label>
+                    <input type="text" name="userName" id="userName" placeholder="Ex: Vador"/>
+                </div><br/>
+
+                <div>
+                    <label>User firstname : </label>
+                    <input type="text" name="userFirstname" id="userFirstname" placeholder="Ex: Dark"/>
+                </div><br/>
+
+                <div>
+                    <label for="pseudo">Pseudo :</label>
+                    <input type="text" name="pseudo" id="pseudo" readonly=""/>
+                </div><br/>
+
+                <div>
+                    <label for="pass">Password :</label>
+                    <input type="password" name="pass" id="pass"/>  
+                </div><br/>
+
+                <div>
+                    <label for="Birthday">Birthday : </label>
+                        <select name="Day">
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                            </select>
+                            <select name="Month">
+                                <option value="01">Janvier</option>
+                                <!--...-->
+                                <option value="12">Février</option>
+                            </select>
+                            <select name="Year">
+                                <option value="2019">2019</option> 
+                                <!--...-->
+                                <option value="2018">2018</option>
+                            </select>
+                </div>
+
+                <div>
+                    <input class="btn_valid" type="button" value="validation" disabled="disabled">
+                </div><br/>
+
+                <div>
+                    <input class="btn_valid" type="button" value="reset">
+                </div>
+
+
+
+            </form>
+            <script src="formulaire.js"></script>
+    </body>
+</html>
+
