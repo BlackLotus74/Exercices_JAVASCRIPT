@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta charset="utf-8">
-        <title></title>
+        <title>Astro - Formulaire</title>
+
+        <style>
+            label{display:inline-block;
+            min-width: 105px;
+            }
+            fieldset{
+                padding: 1.5%;
+                width:25%;
+            }
+        </style>
     </head>
 
     <body>
-        <h1></h1>
+        <h1>Astro - Formulaire</h1><br>
 
         <h2></h2>
             <p>
 
             </p>
-            <form method="POST" action="">
-                <div>
-                    <label>User name : </label>
-                    <input type="text" name="userName" id="userName" placeholder="Ex: Vador"/>
-                </div><br/>
-
-                <div>
-                    <label>User firstname : </label>
-                    <input type="text" name="userFirstname" id="userFirstname" placeholder="Ex: Dark"/>
-                </div><br/>
-
+            <form method="POST" name="formulaire" action="">
+                <fieldset>
+                <di>
+                    <label for="name">User name : </label>
+                    <input type="text" name="userName" id="userName" placeholder="Ex: Vador" onblur="formOk(input)" required><br>
+                              
+                    <label for="name">User firstname : </label>
+                    <input type="text" name="userFirstname" id="userFirstname" placeholder="Ex: Dark" onblur="formOk(input)" required><br>
+                </div><br>
+                    
                 <div>
                     <label for="pseudo">Pseudo :</label>
-                    <input type="text" name="pseudo" id="pseudo" readonly=""/>
-                </div><br/>
-
+                    <input type="text" name="pseudo" id="pseudo" > <!--readonly>-->
+                </div>
+                    
                 <div>
                     <label for="pass">Password :</label>
-                    <input type="password" name="pass" id="pass"/>  
+                    <input type="password" name="pass" id="pass" onblur="formOk(input)" required>  
                 </div><br/>
 
                 <div>
@@ -52,15 +62,15 @@
                 </div>
 
                 <div>
-                    <input class="btn_valid" type="button" value="validation" disabled="disabled">
+                    <input type="submit" value="validation" id="btn_valid" disabled="disabled">
                 </div><br/>
 
                 <div>
-                    <input class="btn_valid" type="button" value="reset">
+                    <input type="reset" value="reset">
                 </div>
 
 
-
+                </fieldset>
             </form>
             <script src="formulaire.js"></script>
     </body>
