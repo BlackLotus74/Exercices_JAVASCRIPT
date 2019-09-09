@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Evaluation fonctions javascript DWWM</title>
+  <link href="mise_en_page.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="global">
+    <div id="header"><br />
+      <h1 id="profil">Compte perso DWWM</h1>
+    </div>
+
+    <div id="container">
+      <br />
+
+      <table class="contenu">
+
+        <tr>
+          <td width="50%">Nom utilisateur</td>
+          <td>
+            <div id="userName"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="50%">Prénom utilisateur</td>
+          <td>
+            <div id="userFirstname"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="50%">Ville</td>
+          <td>
+            <div id="ville"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="50%">Date de naissance</td>
+          <td>
+            <div id="naissance"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="50%">Pseudo</td>
+          <td>
+            <div id="pseudo"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="50%">Nombre de jour(s) anniversaire</td>
+          <td>
+            <div id="nbjour"></div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+    <div id="footer">
+    </div>
+  </div>
+
+  <script>
+    function recupCookies(key) {
+      var params = document.cookie.split("; ");
+      var resultat = "test";
+      let verif = false;
+      for (var i = 0; i < params.length; i++) {
+        var tabPaire = params[i].split("=");
+        if (tabPaire[0] == key) {
+          verif = true;
+          resultat = tabPaire[1];
+        }
+      }
+      return resultat;
+      //alert(resultat);
+    }
+    dateAnniv = new Date(recupCookies("dateAnniv"));
+    var chaineDate = dateAnniv.getDate() + "/" + (dateAnniv.getMonth() + 1) + "/" + dateAnniv.getFullYear();
+    //alert(chaineDate);
+    document.querySelector("#userName").innerHTML = recupCookies("userName");
+    document.querySelector("#userFirstname").innerHTML = recupCookies("userFirstname");
+    document.querySelector("#ville").innerHTML = recupCookies("ville");
+    document.querySelector("#naissance").innerHTML = chaineDate;
+    document.querySelector("#pseudo").innerHTML = recupCookies("pseudo");
+
+    function nbJoursAnniv(dateNaissance) {
+      let dn = new Date(dateNaissance);
+      let dateCourante = new Date();
+      let dateAnniv = new Date(dateCourante.getFullYear(), dn.getMonth(), dn.getDate());
+      let difDate = dateAnniv - dateCourante;
+      let uneJournee = 24 * 60 * 60 * 1000;
+      let nbJours = Math.ceil(difDate / uneJournee);
+
+      if (nbJours > 0) {
+        return nbJours;
+      } else if (nbJours < 0) {
+        let dateAnniv2 = new Date(dateCourante.getFullYear() + 1, dn.getMonth(), dn.getDate());
+        let difDate2 = dateAnniv2 - dateCourante;
+        nbJours = Math.ceil(difDate2 / uneJournee);
+        return nbJours;
+      } else {
+        alert("Bravo ! C'est votre anniversaire !");
+        nbJours = 0;
+        return nbJours;
+      }
+
+    }
+    var dateDeNaiss = recupCookies("dateAnniv");
+    document.querySelector("#nbjour").innerHTML = nbJoursAnniv(dateDeNaiss);
+
+
+    function creerElement(elementParent){
+        var element = document.createElement("h3");
+        element.id = "titre";
+        element.setAttribute("style", "font-family: verdana; font-size: 1.8em; color: #aa0099; font-weight: bold;");
+        element.innerHTML = "Bienvenu sur votre compte " + recupCookies("userName") + " " + recupCookies("userFirstname");
+        document.getElementById(elementParent).appendChild(element);
+    }
+
+    function removeElement(elementParent, elementEnfant){
+        var parent = document.querySelector("#" + elementParent);
+        var enfant = document.querySelector("#" + elementEnfant);
+        parent.removeChild(enfant);
+        alert("Elément " + elementEnfant + " supprimé");
+    }
+
+    removeElement("header", "profil");
+    creerElement("header");
+    
+
+
+  </script>
+</body>
+
+</html>

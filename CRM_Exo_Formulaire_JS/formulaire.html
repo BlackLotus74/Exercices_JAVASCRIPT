@@ -6,13 +6,16 @@
         <title>Astro - Formulaire</title>
 
         <style>
-            label{display:inline-block;
-            min-width: 105px;
+            label{
+                display:inline-block;
+                min-width: 105px;
             }
-            fieldset{
-                padding: 1.5%;
-                width:25%;
+            textarea{
+                position: relative;
+                padding-left: 100px;
+                margin-left: 108px;
             }
+
         </style>
     </head>
 
@@ -20,57 +23,56 @@
         <h1>Astro - Formulaire</h1><br>
 
         <h2></h2>
-            <p>
 
-            </p>
-            <form method="POST" name="formulaire" action="">
-                <fieldset>
-                <di>
+            <form id="form1" method="POST" name="formulaire" action="accueil.html" enctype="text/plain">
+            
+                <div>
+                    <textarea name="texte" rows="5" cols="10">Texte</textarea>
+                </div></br>
+
+                <div>
                     <label for="name">User name : </label>
-                    <input type="text" name="userName" id="userName" placeholder="Ex: Vador" onblur="formOk(input)" required><br>
+                    <input type="text" name="userName" id="userName" placeholder="Ex: Vador" required><br>
                               
                     <label for="name">User firstname : </label>
-                    <input type="text" name="userFirstname" id="userFirstname" placeholder="Ex: Dark" onblur="formOk(input)" required><br>
+                    <input type="text" name="userFirstname" id="userFirstname" placeholder="Ex: Dark" required><br>
+
+                    <label for="ville">ville : </label>
+                    <input type="text" name="ville" id="ville">
                 </div><br>
                     
                 <div>
                     <label for="pseudo">Pseudo :</label>
                     <input type="text" name="pseudo" id="pseudo" > <!--readonly>-->
-                </div>
+                </div><br>
+
+                <div>
+                    <label for="jourAnniv">Nombre jour(s) <br> anniversaire :</label>
+                    <input type="number" name="nbJour" id="nbJour">
+                </div><br>
                     
                 <div>
                     <label for="pass">Password :</label>
-                    <input type="password" name="pass" id="pass" onblur="formOk(input)" required>  
+                    <input type="password" name="pass" id="pass" required>  
                 </div><br/>
 
                 <div>
                     <label for="Birthday">Birthday : </label>
-                        <select name="Day">
-                                <option value="01">01</option>
-                                <option value="02">02</option>
-                            </select>
-                            <select name="Month">
-                                <option value="01">Janvier</option>
-                                <!--...-->
-                                <option value="12">Février</option>
-                            </select>
-                            <select name="Year">
-                                <option value="2019">2019</option> 
-                                <!--...-->
-                                <option value="2018">2018</option>
-                            </select>
+                        <select name="Day" id="jour" onblur=""><script></script></select>                      
+                        <select name="Month" id="mois" onblur=""><script></script></select>                     
+                        <select name="Year" id="annee" onblur=""><script></script></select>                   
                 </div>
 
                 <div>
-                    <input type="submit" value="validation" id="btn_valid" disabled="disabled">
+                    <input type="button" value="validation" id="validation" disabled="disabled">
                 </div><br/>
 
                 <div>
-                    <input type="reset" value="reset">
+                    <input type="reset" value="reset" id="reset">
                 </div>
 
 
-                </fieldset>
+               
             </form>
             <script src="formulaire.js"></script>
     </body>
