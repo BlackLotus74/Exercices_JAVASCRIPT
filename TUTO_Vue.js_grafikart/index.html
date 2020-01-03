@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js tuto grafikart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"></link>
+
+    <style>
+        .main.container{
+            padding-top: 50px;
+        }        
+    
+    </style>
+
+</head>
+<body>
+    <div class="ui inverted fixed menu">
+        <div class="header item">Tutoriel</div>
+    </div>
+    <div class="ui main container" id="app">
+
+        <input type="text" v-model="message">
+        <input type="checkbox" v-model="cls" :true-value="'success'" :false-value="'error'">
+
+        <a v-bind:href="link" :title="message">{{ message }}</a>   <!--pas obligé d emettre le v-bind (<a :href= etc-->
+
+        <ul>
+            <li v-for="person in persons">{{ person }}</li>
+        </ul>
+
+        <div class="ui success message" v-if="success">   <!-- v-if ou v-show   v-if supp de l html , v-show=false = display: none -->
+
+            <i class="close icon" @click="close"></i>  <!-- raccourci v-on: -> @-->
+
+            <p>{{ message }}</p>
+        </div>
+
+        <div class="ui message" :class="{success:success, error:!success}"></div>
+
+        <div class="ui message" :class="cls"></div>
+
+        <div class="ui error message" v-else>
+            <p>Echec</p>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
