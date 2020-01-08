@@ -18,15 +18,25 @@
     <div class="ui inverted fixed menu">
         <div class="header item">Tutoriel</div>
     </div>
-    <div class="ui main container" id="app2">
 
-        {{ seconds }}
+    <div class="ui main container" id="app3">
 
-        <!--{{ persons }}
+        <input type="checkbox" v-model="success">
+
+        <input type="text">
+
+        <div class="ui message" :class="cls()">
+
+            Salut les terriens !
+        </div>
+
+        <!--{{ seconds }}
+
+        {{ persons }}
 
         <button @click="addPerson">Ajouter une personne</button>
 
-        <!--<input type="text" v-model="message">
+        <input type="text" v-model="message">
         <input type="checkbox" v-model="cls" :true-value="'success'" :false-value="'error'">
 
         <a v-bind:href="link" :title="message">{{ message }}</a>   <!--pas obligé d emettre le v-bind (<a :href= etc-->
@@ -54,7 +64,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <!--<script src="app.js"></script>-->
-    <script src="app2.js"></script>
+    <script src="app3.js"></script>
 
 </body>
 </html>
