@@ -23,9 +23,11 @@
 
         <input type="checkbox" v-model="success">
 
-        <input type="text">
+        <input type="text" v-model="message">
 
-        <div class="ui message" :class="cls()">
+        {{ message }}
+
+        <div class="ui message" :class="cls">
 
             Salut les terriens !
         </div>
