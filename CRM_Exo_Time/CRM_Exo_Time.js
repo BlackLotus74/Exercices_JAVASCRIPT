@@ -7,7 +7,7 @@ function afficherDate(){
         var annee = maDate.getFullYear();
         var jour = maDate.getDate();
         var numDay = maDate.getDay();
-        var mois = maDate.getMonth();
+        var mois = maDate.getMonth()+1;
 
         jour=(jour<10)?"0"+jour:jour;
         mois=(mois<10)?"0"+mois:mois;
