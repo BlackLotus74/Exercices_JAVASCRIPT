@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue.js tuto grafikart</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+    </link>
 
     <style>
-        .main.container{
+        .main.container {
             padding-top: 50px;
-        }        
-    
+        }
     </style>
 
 </head>
+
 <body>
     <div class="ui inverted fixed menu">
         <div class="header item">Tutoriel</div>
@@ -21,16 +23,19 @@
 
     <div class="ui main container" id="app3">
 
-        <input type="checkbox" v-model="success">
-
+        <p>
+            Prénom : {{ firstname }}<br>
+            Nom : {{ lastname }}<br>
+            Nom complet : <input type="text" v-model="fullName">
+        </p>
+        <!--<input type="checkbox" v-model="success">
         <input type="text" v-model="message">
 
         {{ message }}
 
         <div class="ui message" :class="cls">
-
             Salut les terriens !
-        </div>
+        </div>-->
 
         <!--{{ seconds }}
 
@@ -49,9 +54,9 @@
 
         <div class="ui success message" v-if="success">   <!-- v-if ou v-show   v-if supp de l html , v-show=false = display: none -->
 
-            <!--<i class="close icon" @click="close"></i>  <!-- raccourci v-on: -> @-->
+        <!--<i class="close icon" @click="close"></i>  <!-- raccourci v-on: -> @-->
 
-            <!--<p>{{ message }}</p>
+        <!--<p>{{ message }}</p>
         </div>
 
         <div class="ui message" :class="{success:success, error:!success}"></div>
@@ -69,4 +74,5 @@
     <script src="app3.js"></script>
 
 </body>
+
 </html>
