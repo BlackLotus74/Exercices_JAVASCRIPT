@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js tuto grafikart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+    </link>
+
+    <style>
+        .main.container {
+            padding-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="ui inverted fixed menu">
+
+        <div class="header item">Tutoriel</div>
+    </div>
+
+    <div class="ui main container" id="app4">
+
+        <p>
+            prenom: {{ firstname }}<br>
+            nom: {{ lastname }}<br>
+            nom complet: <input type="text" v-model="fullName">
+        </p>
+      
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <!--<script src="app.js"></script>-->
+    <script src="app4.js"></script>
+
+</body>
+
+</html>
