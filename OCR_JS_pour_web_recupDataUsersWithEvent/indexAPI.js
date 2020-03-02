@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#ask-weather").addEventListener("click", function() {
         askWeather();
     });
-    
+
 
     myInput.addEventListener('input', function(e) {
         var value = e.target.value;
@@ -26,4 +26,10 @@ window.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
     });
+
+    let request = new XMLHttpRequest();
+    request.open("POST", "https://www.prevision-meteo.ch/services/json/annecy");
+    request.setRequestHeader("Content-type", "application/jason");  //prévenir service web qu'il va recevoir du JSON
+    request.send(JSON.stringify(jsonBody));                         //transformer objet JavaScript en JSON
+    
 });
